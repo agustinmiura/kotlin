@@ -59,6 +59,8 @@ fun main(args: Array<String>) {
      * When we use counter variance we can't use them as input
      */
 
+    
+
 }
 
 class Garden2<T: Flower2>(val flowers: List<T>, val flowerCare: FlowerCare<T>) {
