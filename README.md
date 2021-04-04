@@ -3,4 +3,4 @@
 Kotlin proyect
 =============
 
-* Proyect : Comparison between Java and Kotlin with examples .
+* tutorial : Comparison between Java and Kotlin with examples .
