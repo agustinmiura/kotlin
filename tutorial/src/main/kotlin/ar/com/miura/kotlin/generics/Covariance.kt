@@ -1,4 +1,4 @@
-package ar.com.miura.kotlin
+package ar.com.miura.kotlin.generics
 
 import org.intellij.lang.annotations.Flow
 

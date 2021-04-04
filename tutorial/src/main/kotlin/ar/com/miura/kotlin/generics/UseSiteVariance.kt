@@ -31,7 +31,7 @@ fun main(args:Array<String>) {
  * //this is counter variance in Java
  * List<? super Car>
  *
- *Java doesn't have any site variance  
+ *Java doesn't have any site variance
  */
 fun<T: Car> copyCars(source: MutableList<out T>, destination: MutableList<T>) {
     for(car in source) {
