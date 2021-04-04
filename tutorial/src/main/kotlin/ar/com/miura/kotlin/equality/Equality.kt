@@ -6,11 +6,18 @@ fun main(args: Array<String>) {
     var employee2 = Employee("Blue", "Ford", 11);
     var employee3 = Employee("Blue", "Ford", 12);
 
+    var number = 12
     println(" e vs e2 :  ${employee==employee2}")
     println(" e vs e3 : ${employee2==employee3}")
     println(" e === e2 : ${employee === employee2 }")
-    println(" e === e3 : ${employee2 === employee3}")
+    println(" e === e3 : ${employee2 === employee3} , $number ")
 
+    val largeString = """ 
+        This is a huge string with multiple lines here
+        This is a huge string with multiple lines here
+        This is a huge string with multiple lines here
+    """
+    println(largeString)
 
 }
 
