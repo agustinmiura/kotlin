@@ -27,7 +27,9 @@ fun convertToInt(collection: List<Number>) {
     for(number in collection) {
         println("${number.toInt()}")
     }
-    collection.add(25)
+    // Problems that could happen with covariant classes
+    // Declare a list with short and add decimals .
+    //collection.add(25.3)
 }
 
 fun convertToIntMutable(collection: MutableList<Number>) {
@@ -93,5 +95,20 @@ class Garden<out T: Flower> {
        This could lead to have a list with multiple lists . Subtyping is preserved
        fun plantFlower(flower: T)  {}
     */
+
+}
+
+/**
+ * Class that accepts covariants as input
+ * I could pass any class here .  Can't use var .
+ * Must use val , It doesn't have a get .
+ * "private var" also works
+ */
+class UnsafeGarden<out T:Flower>(val something: T) {
+//try private var ... prevent outside world from adding wrong type of flower
+//covariance the subtype must be preseverd
+    val flowers: List<T> = listOf()
+
+    fun pickFlowers(i: Int): T = flowers[i]
 
 }
