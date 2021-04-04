@@ -56,6 +56,7 @@ fun main(args: Array<String>) {
 
     /**
      * When we use covariance we can't use them as return type
+     * When we use counter variance we can't use them as input
      */
 
 }
