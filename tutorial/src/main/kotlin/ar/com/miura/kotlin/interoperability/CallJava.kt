@@ -95,13 +95,4 @@ fun main(args: Array<String>) {
      */
     println(" x = ${Car.x} ")
     println(Car.xString())
-
-    /**
-     * Single abstract conversions
-     * We can use lambads with interfaces
-     * with only one method
-     * Like here where we send a runnable
-     */
-    car.runRunnable( { println(" I'am a thread ") })
-
 }
