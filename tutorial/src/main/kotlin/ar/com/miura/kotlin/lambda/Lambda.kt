@@ -86,6 +86,42 @@ fun main(args: Array<String>) {
     /**
      * Sets in Kotlin
      */
+    val setInmutable = setOf("one", "two", "three", "four")
+    val mutable = mutableSetOf("one", "two")
+
+    val len = setInmutable.count()
+    val max = setInmutable.maxOrNull()
+    val min = setInmutable.minOrNull()
+    println(" Len set : $len ")
+    println(" Max set : $max ")
+    println(" Min Set : $min ")
+
+    /**
+     * Access an index element
+     */
+    println(" Set : ${setInmutable.elementAt(0)}")
+    /**
+     * Get the last element
+     */
+    println(" Last : ${setInmutable.last()}")
+    /**
+     * Iteration
+     */
+    for(eachElemen in setInmutable) {
+        println("Element in : $eachElemen ")
+    }
+    /**
+     * Adding element
+     */
+    println(mutable.add("11"))
+    println(" After add : $mutable ")
+
+    /**
+     * Union get distinct elemnets
+     */
+    val nums = setOf(1, 2, 3)
+    val nums2 = setOf(3, 4, 5,4,4)
+    println(nums.union(nums2))
 
 
 }
