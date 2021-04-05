@@ -49,5 +49,43 @@ fun main(args: Array<String>) {
     /**
      * Operations for maps
      */
+    val stringMap = mapOf(
+        1 to "one",
+        2 to "two",
+        3 to "three"
+    )
+    println(stringMap)
+    /**
+     * Get size
+     */
+    println(stringMap.size)
+
+    /**
+     * Getting entries , keys and values
+     */
+    println(stringMap.entries)
+    println(stringMap.keys)
+    println(stringMap.values)
+
+    /**
+     * Mutable map
+     */
+    val mutableMap = mutableMapOf(
+        1 to "one",
+        2 to "two",
+        3 to "three"
+    )
+    mutableMap.put(33, "33")
+    println(mutableMap)
+
+    /**
+     * For each iteration
+     */
+    mutableMap.forEach{ (k,v) -> println(" key $k, , value $v ") }
+
+    /**
+     * Sets in Kotlin
+     */
+
 
 }
