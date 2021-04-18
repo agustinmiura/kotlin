@@ -98,4 +98,5 @@ hs_err_pid*i
 /target
 
 *.properties
-
+target/*
+target
