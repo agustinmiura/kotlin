@@ -1,0 +1,37 @@
+{
+  "id": "ISSUE-1",
+  "issueSummary": "Dragons Need Fed",
+  "issueDetails": "I need my dragons fed pronto.",
+  "reporter": {
+    "firstName": "Daenerys",
+    "lastName": "Targaryen"
+  },
+  "assignee": {
+    "firstName": "Jorah",
+    "lastName": "Mormont"
+  },
+  "actions": [
+    {
+      "id": 11,
+      "type": "COMMENT",
+      "text": "I'm going to let Daario get this one.",
+      "user": {
+        "firstName": "Jorah",
+        "lastName": "Mormont"
+      }
+    },
+    {
+      "id": 34,
+      "type": "CLOSE",
+      "text": "All set.",
+      "user": {
+        "firstName": "Daario",
+        "lastName": "Naharis"
+      }
+    }
+  ],
+  "properties": {
+    "priority": "1",
+    "email": "motherofdragons@got.com"
+  }
+}
