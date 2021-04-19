@@ -74,6 +74,12 @@
         </dependency>
 
         <dependency>
+            <groupId>io.ktor</groupId>
+            <artifactId>ktor-client-serialization</artifactId>
+            <version>${ktor_version}</version>
+        </dependency>
+
+        <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
             <version>5.7.1</version>
