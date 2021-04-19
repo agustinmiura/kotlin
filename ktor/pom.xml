@@ -15,14 +15,7 @@
         <kotlin.compiler.incremental>true</kotlin.compiler.incremental>
         <main.class>io.ktor.server.tomcat.EngineMain</main.class>
     </properties>
-    <repositories>
-        <repository>
-            <id>repo1</id>
-            <url>mavenCentral</url>
-            <releases><enabled>true</enabled></releases>
-            <snapshots><enabled>true</enabled></snapshots>
-        </repository>
-    </repositories>
+
     <dependencies>
         <dependency>
             <groupId>org.jetbrains.kotlin</groupId>
@@ -83,6 +76,7 @@
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
+            <version>5.7.1</version>
             <scope>test</scope>
         </dependency>
 
@@ -92,6 +86,18 @@
             <version>${ktor_version}</version>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.kodein.di</groupId>
+            <artifactId>kodein-di-generic-jvm</artifactId>
+            <version>6.1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.kodein.di</groupId>
+            <artifactId>kodein-di-core-jvm</artifactId>
+            <version>6.1.0</version>
+        </dependency>
+
     </dependencies>
     <build>
         <sourceDirectory>${project.basedir}/src</sourceDirectory>
@@ -168,4 +174,24 @@
             </plugin>
         </plugins>
     </build>
+
+    <repositories>
+        <repository>
+            <id>KI</id>
+            <url>https://dl.bintray.com/kodein-framework/Kodein-DI/</url>
+        </repository>
+        <repository>
+            <id>mavenCentral</id>
+            <url>https://repo1.maven.org/maven2/</url>
+        </repository>
+        <repository>
+            <id>sonatype</id>
+            <url>https://oss.sonatype.org/content/repositories/releases/</url>
+        </repository>
+        <repository>
+            <id>bintray</id>
+            <url>https://jcenter.bintray.com/</url>
+        </repository>
+    </repositories>
+
 </project>
