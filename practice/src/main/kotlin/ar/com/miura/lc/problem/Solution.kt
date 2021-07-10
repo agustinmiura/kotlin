@@ -1,4 +1,4 @@
-package ar.com.miura.leetcode.problem
+package ar.com.miura.lc.problem
 
 class Solution {
     fun countAndSay(n: Int): String {
