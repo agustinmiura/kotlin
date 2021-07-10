@@ -1,7 +1,6 @@
 package ar.com.miura.java.interoperbility;
 
 import ar.com.miura.kotlin.interoperability.KotlinCar;
-import ar.com.miura.kotlin.interoperability.KotlinCarKt;
 
 public class CallingKotlin {
 
