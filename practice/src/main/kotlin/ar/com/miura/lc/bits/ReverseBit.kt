@@ -11,7 +11,7 @@ fun main() {
 
 class ReverseBit {
 
-    fun reverse(number:Int):Int {
+    public fun reverse(number:Int):Int {
         var result = 0
         var power = 31
         var numberToProcess = number
