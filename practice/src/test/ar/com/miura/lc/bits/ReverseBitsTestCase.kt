@@ -12,7 +12,18 @@ class ReverseBitsTestCase {
          *
          */
         var number:Int = Integer.parseInt("00000010100101000001111010011100", 2)
-        var reversed = ReverseBit().reverse(number)
-        assertEquals("111001011110000010100101000000", Integer.toBinaryString(reversed))
+        var reversed = ReverseBit().reverse(number.toInt())
+        assertEquals("111001011110000010100101000000", Integer.toBinaryString(reversed.toInt()))
     }
+
+    /**
+     * -1073741825
+     */
+    @Test
+    fun `should check border case`() {
+        var reversed = ReverseBit().reverse(-1073741825)
+        assertEquals("111001011110000010100101000000", Integer.toBinaryString(reversed.toInt()))
+    }
+
+
 }
