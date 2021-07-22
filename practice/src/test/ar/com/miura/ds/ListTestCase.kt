@@ -4,6 +4,15 @@ import java.util.*
 
 fun main() {
 
+    var aString = "aString"
+    for(a in aString) {
+
+    }
+
+    var char = 'a'
+    char.isLowerCase()
+    char.isUpperCase()
+
     var maxSize = 0
     var chars = mutableSetOf<Char>()
     chars.size
