@@ -4,11 +4,15 @@ import java.util.*
 
 fun main() {
 
+    arrayOf<IntArray>()
+
     val nums = PriorityQueue<Int>()
     nums.size
 
     var intArray = intArrayOf(1,2,3,4)
     intArray.sortedArray()
+
+    intArray.copyOf()
 
     var aString = "aString"
     for(a in aString) {
