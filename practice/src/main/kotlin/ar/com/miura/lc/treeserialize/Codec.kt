@@ -33,15 +33,10 @@ class Codec() {
 
     private fun deserialize(queue:Queue<String>):TreeNode? {
 
-        if (!queue.isEmpty()) {
-            return null
-        }
-
         var content:String = queue.poll()
         if (content=="null") {
             return null
         }
-
         var root = TreeNode(content.toInt())
         root.left = deserialize(queue)
         root.right = deserialize(queue)
@@ -54,18 +49,26 @@ class Codec() {
 
         if (root==null) {
             sBuilder.append("null,")
+            return
 
         } else {
 
-            val value:String = root.`val`.toString()
+            val value:String = root.`val`.toInt().toString()
             sBuilder.append(value + ",")
-            sBuilder.append(subSerialize(root.left, sBuilder))
-            sBuilder.append(subSerialize(root.right, sBuilder))
 
+            if (root.left!=null) {
+                subSerialize(root.left, sBuilder)
+            } else {
+                sBuilder.append("null,")
+            }
+
+            if (root.right!=null) {
+                subSerialize(root.right, sBuilder)
+            } else {
+                sBuilder.append("null,")
+            }
         }
-
     }
-
 }
 
 class TreeNode(var `val`: Int) {
