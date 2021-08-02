@@ -33,7 +33,7 @@ class Codec() {
 
     private fun deserialize(queue:Queue<String>):TreeNode? {
 
-        if (queue.isEmpty()) {
+        if (!queue.isEmpty()) {
             return null
         }
 
