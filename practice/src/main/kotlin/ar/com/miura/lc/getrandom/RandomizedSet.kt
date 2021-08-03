@@ -9,6 +9,8 @@ class RandomizedSet() {
 
     private var map = mutableMapOf<Int,Int>()
 
+    private var random = Random()
+
 
     /** Inserts a value to the set. Returns true if the set did not already contain the specified element. */
     fun insert(`val`: Int): Boolean {
@@ -52,7 +54,6 @@ class RandomizedSet() {
     /** Get a random element from the set. */
     fun getRandom(): Int {
         if (!numbers.isEmpty()) {
-            var random = Random()
             var index = numbers.get(random.nextInt(numbers.size))
             return numbers.get(index)
 
