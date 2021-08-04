@@ -18,13 +18,11 @@ class RandomizedSet() {
         if (map.contains(value)) {
             return false
         } else {
-
             numbers.add(value)
             map.put(value, numbers.size-1)
             return true
-
         }
-        numbers.add(`val`)
+
     }
 
     /** Removes a value from the set. Returns true if the set contained the specified element. */
@@ -35,18 +33,14 @@ class RandomizedSet() {
             return false
         }
 
-        var toDelete = value
         var originalIndex = map.getOrDefault(value, -1)
 
         var lastElement = numbers.last()
-
-        numbers.add(lastElement,originalIndex)
+        numbers.set(originalIndex,lastElement)
         map.put(lastElement, originalIndex)
 
-        println(" Numbers size : ${numbers.size} ")
-
-        numbers.removeAt(numbers.size-1)
-        map.remove(lastElement)
+        numbers.removeLast()
+        map.remove(value)
 
         return true
     }
@@ -55,6 +49,7 @@ class RandomizedSet() {
     fun getRandom(): Int {
         if (!numbers.isEmpty()) {
             var index = numbers.get(random.nextInt(numbers.size))
+            index = index % numbers.size
             return numbers.get(index)
 
         } else {
@@ -65,11 +60,3 @@ class RandomizedSet() {
     }
 
 }
-
-/**
- * Your RandomizedSet object will be instantiated and called as such:
- * var obj = RandomizedSet()
- * var param_1 = obj.insert(`val`)
- * var param_2 = obj.remove(`val`)
- * var param_3 = obj.getRandom()
- */
