@@ -47,16 +47,9 @@ class RandomizedSet() {
 
     /** Get a random element from the set. */
     fun getRandom(): Int {
-        if (!numbers.isEmpty()) {
-            var index = numbers.get(random.nextInt(numbers.size))
-            index = index % numbers.size
-            return numbers.get(index)
-
-        } else {
-            return -1
-
-        }
-
+        var max = numbers.size-1
+        var index = (0..max).random()
+        return numbers.get(index)
     }
 
 }
