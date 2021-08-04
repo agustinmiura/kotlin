@@ -1,5 +1,7 @@
 package ar.com.miura.kotlin
 
+import java.math.BigInteger
+
 class FactorialTestCase {
 }
 
