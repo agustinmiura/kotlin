@@ -13,4 +13,13 @@ class BitOperatorsTestCase {
         assertEquals(0, 1 xor 1)
     }
 
+    @Test
+    fun `should get carry`() {
+        assertEquals(1, 1 and 0)
+        assertEquals(1, 0 and 1)
+        assertEquals(0, 0 and 0)
+        assertEquals(1, 1 and 1)
+    }
+
+
 }
