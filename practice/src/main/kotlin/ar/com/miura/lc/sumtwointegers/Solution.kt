@@ -47,7 +47,7 @@ class Solution {
 
         while(yValue!=0) {
             var result = xValue xor yValue
-            var borrow = (xValue.inv() and yValue )
+            var borrow = (xValue.inv() and yValue ) shl 1
             xValue = result
             yValue = borrow
         }
