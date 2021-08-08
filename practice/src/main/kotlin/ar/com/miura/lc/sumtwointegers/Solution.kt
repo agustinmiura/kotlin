@@ -38,22 +38,20 @@ class Solution {
     }
 
     /**
-     *
+     * Binary difference
      */
     private fun bitSubstraction(x:Int, y:Int):Int {
-       return 0
+
+        var yValue = Math.abs(y)
+        var xValue = Math.abs(x)
+
+        while(yValue!=0) {
+            var result = xValue xor yValue
+            var borrow = (xValue.inv() and yValue )
+            xValue = result
+            yValue = borrow
+        }
+        return xValue
     }
-
-
-
-    /**
-     *
-     */
-    private fun getBit(number:Int, position:Int):Boolean {
-        return (number and (1 shl position) !=0)
-    }
-
-
-
 
 }
