@@ -20,7 +20,7 @@ class Solution {
         return stack.pop().toInt();
     }
 
-    private fun solveOperation(stack: Stack<String>, operation:String) {
+    private fun solveOperation(stack:Stack<String>, operation:String) {
 
         var operand1 = stack.pop()
         var operand2 = stack.pop()
@@ -29,11 +29,11 @@ class Solution {
         if (operation=="+") {
             result = operand1.toInt() + operand2.toInt()
         } else if (operation=="-") {
-            result = operand1.toInt() - operand2.toInt()
+            result = operand2.toInt() - operand1.toInt()
         } else if (operation=="*") {
             result = operand1.toInt() * operand2.toInt()
         } else if (operation=="/") {
-            result = operand1.toInt() / operand2.toInt()
+            result = operand2.toInt() / operand1.toInt()
         } else {
             throw RuntimeException("Error")
         }
