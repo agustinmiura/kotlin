@@ -3,6 +3,9 @@ package ar.com.miura.lc.longestsequence
 class Solution {
     fun lengthOfLIS(nums: IntArray): Int {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 7da299d (Solved longest sequence)
         var size = nums.size
         var dp = IntArray(size)
         dp[0] = 1
@@ -21,6 +24,7 @@ class Solution {
             }
             dp[i] = maxValue + 1
             maxSize = Math.max(maxSize, dp[i])
+<<<<<<< HEAD
         }
         return maxSize
 =======
@@ -39,5 +43,9 @@ class Solution {
             return recursiveSequence(nums,index-1)
         }
 >>>>>>> c629737 (Added solution)
+=======
+        }
+        return maxSize
+>>>>>>> 7da299d (Solved longest sequence)
     }
 }
