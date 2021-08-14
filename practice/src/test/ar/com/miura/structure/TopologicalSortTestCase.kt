@@ -26,7 +26,7 @@ class TopologicalSortTestCase {
         deps.add(mutableListOf(4,3))
 
         val orderdedNodes = (TopologicalSort().topologicalSort(jobs, deps))
-        val expectedNodes = intArrayOf(4,1,3,2)
+        val expectedNodes = intArrayOf(1,4,3,2)
         for((i,v) in expectedNodes.withIndex()) {
             assertEquals(v, orderdedNodes[i])
         }
