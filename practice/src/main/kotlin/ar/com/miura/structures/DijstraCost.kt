@@ -29,16 +29,24 @@ class DijstraCost {
                 visited.add(vertex)
 
                 var connectedVertex = edges.get(vertex)
+
                 for(eachList in connectedVertex) {
+
                     var destination = eachList.get(0)
                     var adjacentCost = eachList.get(1)
 
-                    var newCost = cost + adjacentCost
-                    if (newCost<costs[destination]) {
-                        costs[destination] = newCost
-                        pq.add(intArrayOf(destination, newCost))
-                    }
+                        var newCost = cost + adjacentCost
+                        if (newCost<costs[destination]) {
+                            costs[destination] = newCost
+                            pq.add(intArrayOf(destination, newCost))
+                        }
                 }
+            }
+        }
+
+        for((index,value) in costs.withIndex()) {
+            if (value==MAX_COST) {
+                costs[index] = -1
             }
         }
 

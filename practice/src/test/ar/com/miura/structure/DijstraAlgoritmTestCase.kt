@@ -20,6 +20,7 @@ class DijstraAlgoritmTestCase {
         /**
          * from 1 to 4,3
           */
+        edges.get(1).add(mutableListOf(2,6))
         edges.get(1).add(mutableListOf(4,3))
         edges.get(1).add(mutableListOf(3,20))
 
