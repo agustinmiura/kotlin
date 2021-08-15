@@ -1,8 +1,8 @@
-package ar.com.miura.structure
+package ar.com.miura.lc.design
 
 import java.util.*
 
-class Solution(private val nums: IntArray) {
+class ShuffleArray(private val nums: IntArray) {
 
     private lateinit var numsOriginal:IntArray
     init {
