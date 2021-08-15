@@ -1,5 +1,6 @@
 package ar.com.miura.lc.getrandom
 
+import ar.com.miura.lc.design.RandomizedSet
 import org.junit.jupiter.api.Test
 import kotlin.test.assertFalse
 import kotlin.test.assertTrue

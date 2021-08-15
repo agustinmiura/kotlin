@@ -1,6 +1,6 @@
 package ar.com.miura.lc.bits
 
-import ar.com.miura.lc.sumtwointegers.Solution
+import ar.com.miura.lc.others.SumTwoIntegers
 import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals
 
@@ -24,7 +24,7 @@ class BitOperatorsTestCase {
 
     @Test
     fun `should add numbers with bit add`() {
-        assertEquals(4, Solution().getSum(1,3))
+        assertEquals(4, SumTwoIntegers().getSum(1,3))
     }
 
 }
