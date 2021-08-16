@@ -5,7 +5,7 @@ import java.util.*
 class Inorder {
     fun inorderTraversal(root: TreeNode?): List<Int> {
 
-        if (root==null) {
+        if (root == null) {
             return listOf<Int>()
         }
 
@@ -16,13 +16,13 @@ class Inorder {
 
     private fun walkTree(node: TreeNode?, ints: MutableList<Int>) {
 
-        var nodes:Stack<TreeNode> = Stack<TreeNode>()
+        var nodes: Stack<TreeNode> = Stack<TreeNode>()
 
-        var current:TreeNode? = node
+        var current: TreeNode? = node
 
-        while(current!=null || !nodes.isEmpty()) {
+        while (current != null || !nodes.isEmpty()) {
 
-            while(current!=null) {
+            while (current != null) {
                 nodes.push(current)
                 current = current.left
             }

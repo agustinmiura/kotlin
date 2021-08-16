@@ -8,18 +8,18 @@ import java.util.*
 class BinaryZigZagTraversal {
     fun zigzagLevelOrder(root: TreeNode?): List<List<Int>> {
 
-        if (root==null) {
+        if (root == null) {
             return listOf<List<Int>>()
         }
 
         var numbers = mutableListOf<List<Int>>()
 
-        var nodes:Queue<TreeNode> = LinkedList<TreeNode>()
+        var nodes: Queue<TreeNode> = LinkedList<TreeNode>()
         nodes.add(root)
 
         var level = 0
 
-        while(!nodes.isEmpty()) {
+        while (!nodes.isEmpty()) {
 
             var levelList = mutableListOf<Int>()
             var sons = mutableListOf<TreeNode>()
@@ -27,19 +27,19 @@ class BinaryZigZagTraversal {
             /*
             Fill current level
             */
-            var iterator:Iterator<TreeNode> = nodes.iterator()
-            for(node in iterator) {
+            var iterator: Iterator<TreeNode> = nodes.iterator()
+            for (node in iterator) {
                 levelList.add(node.`val`)
 
-                if (node.left!=null) {
+                if (node.left != null) {
                     sons.add(node.left!!)
                 }
-                if (node.right!=null) {
+                if (node.right != null) {
                     sons.add(node.right!!)
                 }
             }
 
-            if (level%2==1) {
+            if (level % 2 == 1) {
                 levelList = levelList.asReversed()
             }
 
@@ -48,14 +48,14 @@ class BinaryZigZagTraversal {
             /*
             empty the current queue
             */
-            while(!nodes.isEmpty()) {
+            while (!nodes.isEmpty()) {
                 nodes.poll()
             }
 
             /*
             Add nodes to the queue
             */
-            for(node in sons) {
+            for (node in sons) {
                 nodes.add(node)
             }
 

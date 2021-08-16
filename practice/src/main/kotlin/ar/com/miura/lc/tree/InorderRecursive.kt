@@ -9,17 +9,17 @@ class InorderRecursive {
 
     private fun walkTree(node: TreeNode?, ints: MutableList<Int>) {
 
-        if (node==null) {
+        if (node == null) {
             return
         }
 
-        if (node.left!=null) {
+        if (node.left != null) {
             walkTree(node.left, ints)
         }
 
         ints.add(node.`val`)
 
-        if (node.right!=null) {
+        if (node.right != null) {
             walkTree(node.right, ints)
         }
 

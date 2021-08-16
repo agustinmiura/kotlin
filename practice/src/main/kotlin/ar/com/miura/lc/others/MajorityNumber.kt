@@ -2,14 +2,14 @@ package ar.com.miura.lc.others
 
 class MajorityNumber {
     fun majorityElement(nums: IntArray): Int {
-        var map = mutableMapOf<Int,Int>()
-        var toFind = nums.size/2
-        for((i,v) in nums.withIndex()) {
+        var map = mutableMapOf<Int, Int>()
+        var toFind = nums.size / 2
+        for ((i, v) in nums.withIndex()) {
 
             var qty = map.getOrDefault(v, 0)
             qty++
             map.put(v, qty)
-            if (qty>toFind) {
+            if (qty > toFind) {
                 return v
             }
         }

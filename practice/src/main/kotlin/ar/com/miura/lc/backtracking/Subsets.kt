@@ -10,22 +10,22 @@ class Subsets {
         return sets
     }
 
-    private fun backtrack(sets:MutableList<MutableList<Int>>, temp:MutableList<Int>, p:Int, nums:IntArray) {
+    private fun backtrack(sets: MutableList<MutableList<Int>>, temp: MutableList<Int>, p: Int, nums: IntArray) {
 
-        if (temp.size>nums.size) {
+        if (temp.size > nums.size) {
             return
         }
 
         var aList = mutableListOf<Int>()
-        for(e in temp) {
+        for (e in temp) {
             aList.add(e)
         }
         sets.add(aList)
 
         var size = nums.size
-        for(i in p..(size-1)) {
+        for (i in p..(size - 1)) {
             temp.add(nums[i])
-            backtrack(sets, temp, i+1, nums)
+            backtrack(sets, temp, i + 1, nums)
             temp.remove(nums[i])
         }
 

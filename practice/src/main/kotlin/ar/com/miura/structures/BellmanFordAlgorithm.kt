@@ -7,13 +7,13 @@ class BellmanFordAlgorithm {
     /**
      *
      */
-    fun containsNegativeCycle(graph: List<List<Double>>, start:Int = 0): Boolean {
+    fun containsNegativeCycle(graph: List<List<Double>>, start: Int = 0): Boolean {
 
         var size = graph.size
-        var distances = DoubleArray(size, {MAX_DISTANCE})
+        var distances = DoubleArray(size, { MAX_DISTANCE })
         distances[start] = 0.0
 
-        for(i in 0..(size-1)) {
+        for (i in 0..(size - 1)) {
             var updated = relaxEdgedAndUpdateDistance(size, graph, distances)
             if (!updated) {
                 return false

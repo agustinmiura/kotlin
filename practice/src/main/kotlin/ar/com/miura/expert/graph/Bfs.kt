@@ -13,21 +13,21 @@ class BfsNode(name: String) {
         return bfs()
     }
 
-    private fun bfs():List<String> {
+    private fun bfs(): List<String> {
 
         var bfsResult = mutableListOf<String>()
 
-        var queue:Queue<BfsNode> = LinkedList<BfsNode>()
+        var queue: Queue<BfsNode> = LinkedList<BfsNode>()
         queue.add(this)
         var visited = mutableSetOf<String>()
 
-        while(!queue.isEmpty()) {
+        while (!queue.isEmpty()) {
             var currentNode = queue.poll()
             var number = currentNode.name
             if (!visited.contains(number)) {
                 visited.add(number)
                 bfsResult.add(number)
-                for(adjacent in currentNode.children) {
+                for (adjacent in currentNode.children) {
                     queue.offer(adjacent)
                 }
             }

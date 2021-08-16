@@ -5,14 +5,14 @@ class CountAndSay2 {
         return subCountAndSay(n)
     }
 
-    private fun subCountAndSay(n:Int):String {
+    private fun subCountAndSay(n: Int): String {
         var encoded = "1"
-        for(index in 1..n) {
+        for (index in 1..n) {
 
-            if (index==1) {
+            if (index == 1) {
                 encoded = "1"
 
-            } else if (index==2) {
+            } else if (index == 2) {
                 encoded = "11"
 
             } else {
@@ -25,17 +25,17 @@ class CountAndSay2 {
         return encoded
     }
 
-    private fun encode(string:String):String {
+    private fun encode(string: String): String {
 
-        var char:Char = string.get(0)
+        var char: Char = string.get(0)
         var index = 1
         var count = 1
 
         var sBuffer = StringBuffer()
         val size = string.length
-        while(index<size) {
+        while (index < size) {
 
-            if (string.get(index-1)==string.get(index)) {
+            if (string.get(index - 1) == string.get(index)) {
                 count++
             } else {
 
@@ -43,7 +43,7 @@ class CountAndSay2 {
                 sBuffer.append(char)
 
                 char = string.get(index)
-                count= 1
+                count = 1
 
             }
 

@@ -8,11 +8,11 @@ import java.util.*
 class ReverseNotation {
     fun evalRPN(tokens: Array<String>): Int {
 
-        var symbols = mutableSetOf<String>("+","-","*","/")
-        var stack:Stack<String> = Stack<String>()
+        var symbols = mutableSetOf<String>("+", "-", "*", "/")
+        var stack: Stack<String> = Stack<String>()
 
         var max = tokens.size
-        for((i,v) in tokens.withIndex()) {
+        for ((i, v) in tokens.withIndex()) {
 
             if (symbols.contains(v)) {
                 solveOperation(stack, v)
@@ -23,19 +23,19 @@ class ReverseNotation {
         return stack.pop().toInt();
     }
 
-    private fun solveOperation(stack:Stack<String>, operation:String) {
+    private fun solveOperation(stack: Stack<String>, operation: String) {
 
         var operand1 = stack.pop()
         var operand2 = stack.pop()
 
         var result = 0
-        if (operation=="+") {
+        if (operation == "+") {
             result = operand1.toInt() + operand2.toInt()
-        } else if (operation=="-") {
+        } else if (operation == "-") {
             result = operand2.toInt() - operand1.toInt()
-        } else if (operation=="*") {
+        } else if (operation == "*") {
             result = operand1.toInt() * operand2.toInt()
-        } else if (operation=="/") {
+        } else if (operation == "/") {
             result = operand2.toInt() / operand1.toInt()
         } else {
             throw RuntimeException("Error")

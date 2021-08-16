@@ -7,11 +7,11 @@ import java.util.*
  */
 class KLargestElement {
     fun findKthLargest(nums: IntArray, k: Int): Int {
-        val comparator = Comparator<Int>{int1,int2 -> int1-int2}
-        val pq = PriorityQueue<Int>(nums.size ,{e1:Int,e2:Int -> e1-e2})
-        for(v in nums) {
+        val comparator = Comparator<Int> { int1, int2 -> int1 - int2 }
+        val pq = PriorityQueue<Int>(nums.size, { e1: Int, e2: Int -> e1 - e2 })
+        for (v in nums) {
             pq.offer(v)
-            if (pq.size>k) {
+            if (pq.size > k) {
                 pq.poll()
             }
         }

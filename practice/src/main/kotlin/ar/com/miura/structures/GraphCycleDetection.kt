@@ -15,10 +15,10 @@ class GraphCycleDetection {
         var nodeQty = edges.size
 
         var visited = mutableSetOf<Int>()
-        var colors = IntArray(nodeQty, {0})
+        var colors = IntArray(nodeQty, { 0 })
 
-        for(node in 0..(nodeQty-1)) {
-            if (colors[node]==WHITE) {
+        for (node in 0..(nodeQty - 1)) {
+            if (colors[node] == WHITE) {
                 var containsCycle = containsCycle(edges, node, visited, colors)
                 if (containsCycle) {
                     return true
@@ -28,7 +28,7 @@ class GraphCycleDetection {
         return false
     }
 
-    private fun containsCycle(edges: List<List<Int>>, node:Int, visited:MutableSet<Int>, colors:IntArray):Boolean {
+    private fun containsCycle(edges: List<List<Int>>, node: Int, visited: MutableSet<Int>, colors: IntArray): Boolean {
 
         /**
         Mark node as visited
@@ -38,11 +38,11 @@ class GraphCycleDetection {
         colors[node] = GREY
 
         var adjacentList = edges.get(node)
-        for(eachNear in adjacentList) {
-            if (colors[eachNear]==GREY) {
+        for (eachNear in adjacentList) {
+            if (colors[eachNear] == GREY) {
                 return true
 
-            } else if (colors[eachNear]==BLACK) {
+            } else if (colors[eachNear] == BLACK) {
                 continue
 
             } else {
