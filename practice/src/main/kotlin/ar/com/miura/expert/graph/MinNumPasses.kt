@@ -6,10 +6,10 @@ class MinNumPasses {
 
     fun minimumPassesOfMatrix(matrix: MutableList<MutableList<Int>>): Int {
         var passes = convertNegative(matrix)
-        if (!containsNegative(matrix)) {
-            return passes-1
+        return if (!containsNegative(matrix)) {
+            passes-1
         } else {
-            return -1
+            -1
         }
     }
 
