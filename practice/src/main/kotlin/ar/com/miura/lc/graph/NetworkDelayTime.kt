@@ -3,6 +3,9 @@ package ar.com.miura.lc.graph
 import java.util.*
 import kotlin.Comparator
 
+/**
+ * https://leetcode.com/explore/learn/card/graph/622/single-source-shortest-path-algorithm/3863/
+ */
 class NetworkDelayTime {
 
     private val MAX_DISTANCE = 101
