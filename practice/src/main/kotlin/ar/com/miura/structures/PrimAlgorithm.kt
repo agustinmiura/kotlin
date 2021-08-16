@@ -23,7 +23,7 @@ class PrimAlgorithm {
          * Start vertex is zero
          */
         var startNextNodes: IntArray = points[0]
-        for (j in 1..(startNextNodes.size - 1)) {
+        for (j in 1..(size - 1)) {
             var origin: IntArray = points[0]
             var destination: IntArray = points[j]
             var cost = getDistance(origin, destination)

@@ -29,8 +29,8 @@ class PrimAlgorithmTestCase {
         points[1] = intArrayOf(1, 1)
         points[2] = intArrayOf(1, 0)
         points[3] = intArrayOf(-1, 1)
-        var distance = KruskallAlgorithm().minCostConnectPoints(points)
+        var distance = PrimAlgorithm().minCostConnectPoints(points)
         assertEquals(4, distance)
     }
-    
+
 }
