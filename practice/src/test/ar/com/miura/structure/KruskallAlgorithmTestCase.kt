@@ -18,5 +18,19 @@ class KruskallAlgorithmTestCase {
         assertEquals(20, distance)
     }
 
+    /**
+     * [[0,0],[1,1],[1,0],[-1,1]]
+     */
+    @Test
+    fun `should find optimun cost next case`() {
+        var points: Array<IntArray> = Array<IntArray>(4, { intArrayOf() })
+        points[0] = intArrayOf(0, 0)
+        points[1] = intArrayOf(1, 1)
+        points[2] = intArrayOf(1, 0)
+        points[3] = intArrayOf(-1, 1)
+        var distance = KruskallAlgorithm().minCostConnectPoints(points)
+        assertEquals(4, distance)
+    }
+
 
 }
