@@ -41,12 +41,12 @@ class PrimAlgorithm {
             if (!visited.contains(destination)) {
                 visited.add(destination);
                 result += cost;
-                vertexAdded++;
                 /*
                 * Add to the pq all the others adjacent to the new one
                 * */
                 for(j in 0..(size-1)) {
                     if (!visited.contains(j)) {
+
                         /**
                          * Going from destination_point to j_point
                          *
@@ -57,6 +57,7 @@ class PrimAlgorithm {
                         pq.offer(intArrayOf(destination, j, cost));
                     }
                 }
+                vertexAdded++;
             }
         }
         return result;
