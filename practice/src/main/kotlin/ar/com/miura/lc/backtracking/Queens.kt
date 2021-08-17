@@ -3,7 +3,7 @@ package ar.com.miura.lc.backtracking
 
 class Queens {
 
-    private var solutions:MutableList<MutableList<Int>> = mutableListOf<MutableList<Int>>(mutableListOf<Int>())
+    private var solutions: MutableList<MutableList<Int>> = mutableListOf<MutableList<Int>>(mutableListOf<Int>())
 
     /***************************************************************************
      * Return true if queen placement q[n] does not conflict with
@@ -25,7 +25,11 @@ class Queens {
         val n = q.size
         for (i in 0 until n) {
             for (j in 0 until n) {
-                if (q[i] == j) { println("Q ") } else { println("* ") }
+                if (q[i] == j) {
+                    println("Q ")
+                } else {
+                    println("* ")
+                }
             }
         }
     }

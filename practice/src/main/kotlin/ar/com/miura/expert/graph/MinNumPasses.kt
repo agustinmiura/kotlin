@@ -7,7 +7,7 @@ class MinNumPasses {
     fun minimumPassesOfMatrix(matrix: MutableList<MutableList<Int>>): Int {
         var passes = convertNegative(matrix)
         return if (!containsNegative(matrix)) {
-            passes-1
+            passes - 1
         } else {
             -1
         }
@@ -15,24 +15,24 @@ class MinNumPasses {
 
     private fun convertNegative(matrix: MutableList<MutableList<Int>>): Int {
 
-        var nextPassQueue:Queue<IntArray> = getAllPositivePositions(matrix)
+        var nextPassQueue: Queue<IntArray> = getAllPositivePositions(matrix)
 
         var passes = 0
-        while(!nextPassQueue.isEmpty()) {
+        while (!nextPassQueue.isEmpty()) {
             var currentPassQueue = nextPassQueue
             nextPassQueue = LinkedList<IntArray>()
 
-            while(!currentPassQueue.isEmpty()) {
-                var current:IntArray = currentPassQueue.poll()
+            while (!currentPassQueue.isEmpty()) {
+                var current: IntArray = currentPassQueue.poll()
                 var currentRow = current[0]
                 var currentCol = current[1]
 
                 var adjacentPositions = getAdjacents(matrix, currentRow, currentCol)
-                for(position in adjacentPositions) {
+                for (position in adjacentPositions) {
                     var row = position[0]
                     var col = position[1]
                     var value = matrix[row][col]
-                    if (value<0) {
+                    if (value < 0) {
                         matrix[row][col] = value * -1
                         nextPassQueue.offer(intArrayOf(row, col))
                     }
@@ -46,16 +46,16 @@ class MinNumPasses {
         return passes
     }
 
-    private fun getAllPositivePositions(matrix: MutableList<MutableList<Int>>):Queue<IntArray> {
+    private fun getAllPositivePositions(matrix: MutableList<MutableList<Int>>): Queue<IntArray> {
         var rowQty = matrix.size
         var colQty = matrix.get(0).size
 
-        var queue:Queue<IntArray> = LinkedList<IntArray>()
-        for(i in 0..(rowQty-1)) {
-            for(j in 0..(colQty-1)) {
+        var queue: Queue<IntArray> = LinkedList<IntArray>()
+        for (i in 0..(rowQty - 1)) {
+            for (j in 0..(colQty - 1)) {
                 var value = matrix.get(i).get(j)
-                if (value>0) {
-                    queue.offer(intArrayOf(i,j))
+                if (value > 0) {
+                    queue.offer(intArrayOf(i, j))
                 }
             }
         }
@@ -63,7 +63,11 @@ class MinNumPasses {
 
     }
 
-    private fun getAdjacents(matrix: MutableList<MutableList<Int>>, currentRow:Int, currentCol:Int):MutableList<IntArray> {
+    private fun getAdjacents(
+        matrix: MutableList<MutableList<Int>>,
+        currentRow: Int,
+        currentCol: Int
+    ): MutableList<IntArray> {
 
         var rowQty = matrix.size
         var colQty = matrix.get(0).size
@@ -76,26 +80,26 @@ class MinNumPasses {
         /*
         top
         */
-        if (i-1>=0) {
-            positions.add(intArrayOf(i-1, j))
+        if (i - 1 >= 0) {
+            positions.add(intArrayOf(i - 1, j))
         }
         /*
         right
         */
-        if (j+1<colQty) {
-            positions.add(intArrayOf(i,j+1))
+        if (j + 1 < colQty) {
+            positions.add(intArrayOf(i, j + 1))
         }
         /*
         bottom
         */
-        if (i+1<rowQty) {
-            positions.add(intArrayOf(i+1, j))
+        if (i + 1 < rowQty) {
+            positions.add(intArrayOf(i + 1, j))
         }
         /*
         left
         */
-        if (j-1>=0) {
-            positions.add(intArrayOf(i,j-1))
+        if (j - 1 >= 0) {
+            positions.add(intArrayOf(i, j - 1))
         }
         return positions
     }
@@ -103,10 +107,10 @@ class MinNumPasses {
     private fun containsNegative(matrix: MutableList<MutableList<Int>>): Boolean {
         var rowQty = matrix.size
         var colQty = matrix.get(0).size
-        for(i in 0..(rowQty-1)) {
-            for(j in 0..(colQty-1)) {
+        for (i in 0..(rowQty - 1)) {
+            for (j in 0..(colQty - 1)) {
                 var value = matrix.get(i).get(j)
-                if (value<0) {
+                if (value < 0) {
                     return true
                 }
             }

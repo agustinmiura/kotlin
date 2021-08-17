@@ -8,34 +8,34 @@ class HappyNumber2 {
 
         var digits = mutableListOf<Int>()
 
-        var numberMap = mutableMapOf<Int,Int>()
+        var numberMap = mutableMapOf<Int, Int>()
 
         var number = n
 
-        while(number!=1 && !numberMap.contains(number)) {
+        while (number != 1 && !numberMap.contains(number)) {
 
-            numberMap.put(number,number)
+            numberMap.put(number, number)
             number = calcSum(extractDigits(number))
 
         }
 
-        return number==1
+        return number == 1
 
     }
 
-    fun calcSum(nums:MutableList<Int>):Int {
-        return nums.map{it*it}.reduce{y, vars -> y+vars}
+    fun calcSum(nums: MutableList<Int>): Int {
+        return nums.map { it * it }.reduce { y, vars -> y + vars }
     }
 
-    fun extractDigits(n:Int):MutableList<Int> {
+    fun extractDigits(n: Int): MutableList<Int> {
 
         var digits = mutableListOf<Int>()
 
         var div = n
         var remainder = n
-        while(div>=10) {
+        while (div >= 10) {
             remainder = div % 10
-            div = div/10
+            div = div / 10
             digits.add(remainder)
         }
         digits.add(div)

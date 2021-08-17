@@ -10,16 +10,16 @@ class Solution {
         var maxString = ""
         var stringSize = s.length
 
-        var matrix = Array(stringSize, { i -> Array(stringSize, { j -> false })})
+        var matrix = Array(stringSize, { i -> Array(stringSize, { j -> false }) })
 
-        for(i in 0..(stringSize-1)) {
+        for (i in 0..(stringSize - 1)) {
             matrix[i][i] = true
         }
 
-        for(i in stringSize-1 downTo 0) {
-            for(j in (i+1)..stringSize-1) {
+        for (i in stringSize - 1 downTo 0) {
+            for (j in (i + 1)..stringSize - 1) {
 
-                if (j-i==2 && s.get(i)==s.get(j)) {
+                if (j - i == 2 && s.get(i) == s.get(j)) {
                     matrix[i][j] = true
                 } else {
 
@@ -39,10 +39,10 @@ class Palindrome {
         var filteredString = filterString(s)
 
         var i = 0
-        var j = filteredString.length-1
+        var j = filteredString.length - 1
 
-        while(i<j) {
-            if (filteredString.get(i)!=filteredString.get(j)) {
+        while (i < j) {
+            if (filteredString.get(i) != filteredString.get(j)) {
                 return false
             }
             i++
@@ -53,13 +53,14 @@ class Palindrome {
 
     }
 
-    fun filterString(s:String):String {
+    fun filterString(s: String): String {
 
         var sBuilder = StringBuilder()
-        for((k,v) in s.withIndex()) {
-            if ((v >= 'a' && v<= 'z') ||
-                (v >='A' && v<='Z') ||
-                (v >='0' && v<='9')) {
+        for ((k, v) in s.withIndex()) {
+            if ((v >= 'a' && v <= 'z') ||
+                (v >= 'A' && v <= 'Z') ||
+                (v >= '0' && v <= '9')
+            ) {
                 sBuilder.append(v.toLowerCase())
             }
         }

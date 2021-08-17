@@ -16,19 +16,19 @@ class SquareRoot {
         var doubleResult = 1.0
         var xLong = x.toLong()
 
-        while(left<=right) {
+        while (left <= right) {
 
-            middle = left + (right-left)/2
+            middle = left + (right - left) / 2
             doubleResult = 1.0 * middle * middle
 
-            if (doubleResult.toLong()==xLong) {
+            if (doubleResult.toLong() == xLong) {
                 return middle
 
-            } else if ( doubleResult.toLong() > xLong ) {
-                right = middle-1
+            } else if (doubleResult.toLong() > xLong) {
+                right = middle - 1
 
             } else {
-                left = middle+1
+                left = middle + 1
             }
         }
 

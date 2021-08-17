@@ -7,8 +7,8 @@ class AllPathBFSTestCase {
 
     @Test
     fun `should get all paths`() {
-        var graph = Array<IntArray>(4, { intArrayOf()})
-        graph[0] = intArrayOf(1,2)
+        var graph = Array<IntArray>(4, { intArrayOf() })
+        graph[0] = intArrayOf(1, 2)
         graph[1] = intArrayOf(3)
         graph[2] = intArrayOf(3)
         graph[3] = intArrayOf()

@@ -11,26 +11,25 @@ package ar.com.miura.lc.sorting
 class LinearScan {
     fun findPeakElement(nums: IntArray): Int {
 
-        if (nums.size==1) {
+        if (nums.size == 1) {
             return 0
         }
 
         /*
         from left to right
         */
-        var max = nums.size/2
+        var max = nums.size / 2
 
         var current = -1
         var next = -1
         var index = 0
 
         var before = Int.MIN_VALUE
-        while(index<max) {
-
+        while (index < max) {
 
 
             current = nums[index]
-            if (current>before && current>nums[index+1]) {
+            if (current > before && current > nums[index + 1]) {
                 return index
 
             } else {
@@ -41,9 +40,9 @@ class LinearScan {
 
         var size = nums.size
         next = Integer.MIN_VALUE
-        for(i in (size-1) downTo max) {
+        for (i in (size - 1) downTo max) {
             current = nums[i]
-            if (current > next && current > nums[i-1]) {
+            if (current > next && current > nums[i - 1]) {
                 return i
 
             } else {

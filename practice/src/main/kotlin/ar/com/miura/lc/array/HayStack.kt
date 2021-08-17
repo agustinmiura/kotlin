@@ -4,7 +4,7 @@ class HayStack {
     fun strStr(haystack: String, needle: String): Int {
         var index = -1
 
-        if (needle.length>haystack.length) {
+        if (needle.length > haystack.length) {
             return -1
         }
 
@@ -12,17 +12,17 @@ class HayStack {
             return 0
         }
 
-        for((i,hayStackChar) in haystack.withIndex()) {
+        for ((i, hayStackChar) in haystack.withIndex()) {
 
             var found = true
-            for((j,eachChar) in needle.withIndex()) {
+            for ((j, eachChar) in needle.withIndex()) {
 
-                if ( (i+j)>=haystack.length ) {
+                if ((i + j) >= haystack.length) {
                     found = false
                     break
                 }
 
-                if ( (haystack.get(i+j)) != eachChar ) {
+                if ((haystack.get(i + j)) != eachChar) {
                     found = false
                     break
                 }

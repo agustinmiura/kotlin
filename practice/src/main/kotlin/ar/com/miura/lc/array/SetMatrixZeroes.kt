@@ -13,37 +13,37 @@ class SetMatrixZeroes {
         var rows = mutableSetOf<Int>()
         var cols = mutableSetOf<Int>()
 
-        for(i in 0..(matrix.size-1)) {
+        for (i in 0..(matrix.size - 1)) {
             var row = matrix[i]
             var rowSize = row.size
-            for(j in 0..(rowSize-1)) {
-                if (matrix[i][j]==0) {
+            for (j in 0..(rowSize - 1)) {
+                if (matrix[i][j] == 0) {
                     rows.add(i)
                     cols.add(j)
                 }
             }
         }
 
-        for(row in rows) {
+        for (row in rows) {
             clearRow(matrix, row)
         }
 
-        for(col in cols) {
+        for (col in cols) {
             clearCol(matrix, col)
         }
 
     }
 
-    private fun clearRow(matrix: Array<IntArray>, row:Int) {
+    private fun clearRow(matrix: Array<IntArray>, row: Int) {
         var rowSelected = matrix[row]
-        for(j in 0..(rowSelected.size-1)) {
-            matrix[row][j]=0
+        for (j in 0..(rowSelected.size - 1)) {
+            matrix[row][j] = 0
         }
     }
 
-    private fun clearCol(matrix: Array<IntArray>, col:Int) {
+    private fun clearCol(matrix: Array<IntArray>, col: Int) {
         var size = matrix.size
-        for(i in 0..(size-1)) {
+        for (i in 0..(size - 1)) {
             matrix[i][col] = 0
         }
     }

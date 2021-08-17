@@ -24,7 +24,7 @@ class BitOperatorsTestCase {
 
     @Test
     fun `should add numbers with bit add`() {
-        assertEquals(4, SumTwoIntegers().getSum(1,3))
+        assertEquals(4, SumTwoIntegers().getSum(1, 3))
     }
 
 }

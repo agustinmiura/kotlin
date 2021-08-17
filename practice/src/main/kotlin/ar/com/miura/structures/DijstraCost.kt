@@ -8,16 +8,16 @@ class DijstraCost {
 
     fun dijkstrasAlgorithm(start: Int, edges: List<List<List<Int>>>): List<Int> {
 
-        var costs = IntArray(edges.size, {MAX_COST})
+        var costs = IntArray(edges.size, { MAX_COST })
         costs[start] = 0
 
-        val comparator = Comparator<IntArray> {i1:IntArray, i2:IntArray -> i1[1]-i2[1] }
+        val comparator = Comparator<IntArray> { i1: IntArray, i2: IntArray -> i1[1] - i2[1] }
         var pq: PriorityQueue<IntArray> = PriorityQueue<IntArray>(comparator)
-        pq.add(intArrayOf(start,0))
+        pq.add(intArrayOf(start, 0))
 
         var visited = mutableSetOf<Int>()
 
-        while(!pq.isEmpty()) {
+        while (!pq.isEmpty()) {
             var pair = pq.poll()
             var vertex = pair[0]
             var cost = pair[1]
@@ -30,22 +30,22 @@ class DijstraCost {
 
                 var connectedVertex = edges.get(vertex)
 
-                for(eachList in connectedVertex) {
+                for (eachList in connectedVertex) {
 
                     var destination = eachList.get(0)
                     var adjacentCost = eachList.get(1)
 
-                        var newCost = cost + adjacentCost
-                        if (newCost<costs[destination]) {
-                            costs[destination] = newCost
-                            pq.add(intArrayOf(destination, newCost))
-                        }
+                    var newCost = cost + adjacentCost
+                    if (newCost < costs[destination]) {
+                        costs[destination] = newCost
+                        pq.add(intArrayOf(destination, newCost))
+                    }
                 }
             }
         }
 
-        for((index,value) in costs.withIndex()) {
-            if (value==MAX_COST) {
+        for ((index, value) in costs.withIndex()) {
+            if (value == MAX_COST) {
                 costs[index] = -1
             }
         }

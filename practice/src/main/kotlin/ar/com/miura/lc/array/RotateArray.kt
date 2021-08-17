@@ -4,18 +4,18 @@ class RotateArray {
 
     fun search(nums: IntArray, target: Int): Int {
 
-        if (nums.size==0 && nums[0]==target) {
+        if (nums.size == 0 && nums[0] == target) {
             return 0
-        } else if (nums.size==0 && nums[0]!=target) {
+        } else if (nums.size == 0 && nums[0] != target) {
             return -1
         }
 
         var left = 0
-        var right = nums.size-1
-        while(left<right) {
-            var midpoint = left + (right-left)/2
-            if (nums[midpoint]>nums[right]) {
-                left = midpoint+1
+        var right = nums.size - 1
+        while (left < right) {
+            var midpoint = left + (right - left) / 2
+            if (nums[midpoint] > nums[right]) {
+                left = midpoint + 1
             } else {
                 right = midpoint
             }
@@ -25,18 +25,18 @@ class RotateArray {
         left = 0
         right = nums.size - 1
 
-        if (target>=nums[start] && target <= nums[right]) {
+        if (target >= nums[start] && target <= nums[right]) {
             left = start
         } else {
             right = start
         }
 
-        while(left <= right) {
-            var midpoint = left + (right-left)/2
+        while (left <= right) {
+            var midpoint = left + (right - left) / 2
             if (nums[midpoint] == target) {
                 return midpoint
 
-            } else if (nums[midpoint]<target){
+            } else if (nums[midpoint] < target) {
                 left = midpoint + 1
 
             } else {

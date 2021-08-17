@@ -12,14 +12,14 @@ class Solution {
         var max = 0
         var chars = mutableSetOf<Char>()
 
-        while(i<s.length) {
+        while (i < s.length) {
             var char = s.get(i)
-            while(chars.contains(char)) {
+            while (chars.contains(char)) {
                 chars.remove(char)
                 ++j
             }
             chars.add(char)
-            max = Math.max(max, i-j+1)
+            max = Math.max(max, i - j + 1)
             ++i
         }
         return max

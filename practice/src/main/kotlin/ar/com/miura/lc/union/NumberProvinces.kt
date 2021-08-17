@@ -10,13 +10,13 @@ class NumberProvinces {
     fun findCircleNum(isConnected: Array<IntArray>): Int {
         var size = isConnected.size
         var unionFind = UnionFind(size)
-        for(i in 0..size-1) {
-            for(j in 0..size-1) {
+        for (i in 0..size - 1) {
+            for (j in 0..size - 1) {
                 /*
                 * perform union find here
                 * */
-                if (isConnected[i][j]==1) {
-                    unionFind.union(i,j)
+                if (isConnected[i][j] == 1) {
+                    unionFind.union(i, j)
                 }
             }
         }

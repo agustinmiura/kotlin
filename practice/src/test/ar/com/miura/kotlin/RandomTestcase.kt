@@ -9,10 +9,10 @@ class RandomTestcase {
     fun `should fail random`() {
 
         var random = Random()
-        for(i in 0..1000000) {
+        for (i in 0..1000000) {
             var max = 10
             var index = (0..max).random()
-            assert(index<10)
+            assert(index < 10)
         }
 
     }

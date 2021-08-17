@@ -8,13 +8,13 @@ class LongestSequence {
 
         var maxSize = 0
 
-        var max = nums.size-1
-        for(i in 1..max) {
+        var max = nums.size - 1
+        for (i in 1..max) {
             var maxValue = 0
 
-            var maxJ = i-1
-            for(j in 0..maxJ) {
-                if (nums[i]>nums[j]) {
+            var maxJ = i - 1
+            for (j in 0..maxJ) {
+                if (nums[i] > nums[j]) {
                     maxValue = Math.max(maxValue, dp[j])
                 }
             }

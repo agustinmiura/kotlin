@@ -9,7 +9,7 @@ class Solution {
 
         var chars = mutableSetOf<Char>()
 
-        while(end<s.length) {
+        while (end < s.length) {
 
             if (!chars.contains(s.get(end))) {
 

@@ -13,17 +13,18 @@ package ar.com.miura.lc.tree.buildtree
  */
 class Solution {
     fun buildTree(preorder: IntArray, inorder: IntArray): TreeNode? {
-        return helper(0, 0, inorder.size-1, preorder, inorder)
+        return helper(0, 0, inorder.size - 1, preorder, inorder)
     }
 
     private fun helper(
-        preStart:Int,
-        inStart:Int,
-        inEnd:Int,
-        preorder:IntArray,
-        inorder:IntArray):TreeNode? {
+        preStart: Int,
+        inStart: Int,
+        inEnd: Int,
+        preorder: IntArray,
+        inorder: IntArray
+    ): TreeNode? {
 
-        if (preStart > preorder.size-1 || inStart > inEnd) {
+        if (preStart > preorder.size - 1 || inStart > inEnd) {
             return null
         }
 
@@ -32,7 +33,7 @@ class Solution {
         var rootValue = root.`val`
 
         var inIndex = 0
-        for(i in inStart..inEnd) {
+        for (i in inStart..inEnd) {
             if (rootValue == inorder[i]) {
                 inIndex = i
                 break

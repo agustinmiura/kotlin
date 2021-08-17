@@ -1,7 +1,7 @@
 package ar.com.miura.lc.intersectiontwolists
 
 class Solution {
-    fun getIntersectionNode(headA:ListNode?, headB:ListNode?):ListNode? {
+    fun getIntersectionNode(headA: ListNode?, headB: ListNode?): ListNode? {
 
         var newHeadA = ListNode(0)
         newHeadA.next = headA
@@ -11,12 +11,12 @@ class Solution {
 
         var setA = mutableSetOf<ListNode>()
 
-        while( newHeadA.next != null ) {
+        while (newHeadA.next != null) {
             newHeadA = newHeadA.next!!
             setA.add(newHeadA)
         }
 
-        while(newHeadB.next!=null) {
+        while (newHeadB.next != null) {
             newHeadB = newHeadB.next!!
             if (setA.contains(newHeadB)) {
                 return newHeadB
@@ -27,6 +27,7 @@ class Solution {
         return null
     }
 }
+
 class ListNode(var `val`: Int) {
     var next: ListNode? = null
 }
