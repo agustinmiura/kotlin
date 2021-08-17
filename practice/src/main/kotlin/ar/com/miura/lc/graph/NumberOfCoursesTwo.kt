@@ -32,26 +32,20 @@ class NumberOfCoursesTwo {
         /*
         find source for the graph
         */
-        var source = 0;
+        var queue:Queue<Int> = LinkedList<Int>();
         for((k,v) in inGrades) {
             if (v==0) {
-                source = k;
+                queue.offer(k);
             }
         }
-
-        /*
-        Queue
-        */
-        var queue:Queue<Int> = LinkedList<Int>();
-        queue.offer(source);
 
         var orderedTasks = mutableListOf<Int>();
 
         while(!queue.isEmpty()) {
             var task = queue.poll();
+            orderedTasks.add(task);
 
             var nextTasks = graph.getOrDefault(task, mutableListOf<Int>());
-            orderedTasks.add(task);
 
             for(eachTask in nextTasks) {
                 var qty = inGrades.getOrDefault(eachTask,0);
