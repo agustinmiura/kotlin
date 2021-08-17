@@ -10,16 +10,16 @@ class AllPathFromSourceToTarget {
         return paths
     }
 
-    private fun dfs(graph: Array<IntArray>, node:Int, path:MutableList<Int>, paths: MutableList<MutableList<Int>>) {
+    private fun dfs(graph: Array<IntArray>, node: Int, path: MutableList<Int>, paths: MutableList<MutableList<Int>>) {
         path.add(node)
-        if (node==graph.size-1) {
+        if (node == graph.size - 1) {
             paths.add(path.toMutableList())
             return
         }
         var nextNodes = graph.get(node)
-        for(eachNext in nextNodes) {
+        for (eachNext in nextNodes) {
             dfs(graph, eachNext, path, paths)
-            path.removeAt(path.size-1)
+            path.removeAt(path.size - 1)
         }
     }
 

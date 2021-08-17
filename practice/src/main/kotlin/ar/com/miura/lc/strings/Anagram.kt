@@ -9,17 +9,17 @@ class Anagram {
         var sSize = s.length
         var tSize = t.length
 
-        if (sSize!=tSize) {
+        if (sSize != tSize) {
             return false
         }
 
         var sMap = toMap(s)
         var tMap = toMap(t)
 
-        for((keyS,valueS) in sMap) {
+        for ((keyS, valueS) in sMap) {
 
-            var valueT = tMap.getOrDefault(keyS,0)
-            if (valueT!=valueS) {
+            var valueT = tMap.getOrDefault(keyS, 0)
+            if (valueT != valueS) {
                 return false
             }
 
@@ -29,13 +29,13 @@ class Anagram {
 
     }
 
-    private fun toMap(s:String):MutableMap<Char,Int> {
+    private fun toMap(s: String): MutableMap<Char, Int> {
 
-        var map = mutableMapOf<Char,Int>()
-        for((k,v) in s.withIndex()) {
-            var qty = map.getOrDefault(v,0)
+        var map = mutableMapOf<Char, Int>()
+        for ((k, v) in s.withIndex()) {
+            var qty = map.getOrDefault(v, 0)
             qty++
-            map.put(v,qty)
+            map.put(v, qty)
         }
         return map
     }

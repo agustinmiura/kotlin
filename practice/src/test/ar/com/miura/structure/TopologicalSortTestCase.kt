@@ -12,22 +12,22 @@ class TopologicalSortTestCase {
         val jobs = mutableListOf<Int>()
         val deps = mutableListOf<List<Int>>()
 
-        var jobValues = intArrayOf(1,2,3,4)
-        for(job in jobValues) {
+        var jobValues = intArrayOf(1, 2, 3, 4)
+        for (job in jobValues) {
             jobs.add(job)
         }
 
-        deps.add(mutableListOf(1,3))
-        deps.add(mutableListOf(1,2))
+        deps.add(mutableListOf(1, 3))
+        deps.add(mutableListOf(1, 2))
 
-        deps.add(mutableListOf(3,2))
+        deps.add(mutableListOf(3, 2))
 
-        deps.add(mutableListOf(4,2))
-        deps.add(mutableListOf(4,3))
+        deps.add(mutableListOf(4, 2))
+        deps.add(mutableListOf(4, 3))
 
         val orderdedNodes = (TopologicalSort().topologicalSort(jobs, deps))
-        val expectedNodes = intArrayOf(1,4,3,2)
-        for((i,v) in expectedNodes.withIndex()) {
+        val expectedNodes = intArrayOf(1, 4, 3, 2)
+        for ((i, v) in expectedNodes.withIndex()) {
             assertEquals(v, orderdedNodes[i])
         }
 

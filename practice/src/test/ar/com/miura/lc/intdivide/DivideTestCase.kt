@@ -10,6 +10,6 @@ class DivideTestCase {
     fun `should divide 10 by 3`() {
         var dividend = 10
         var divisor = 3
-        assertEquals(3, BestSolution().divide(10,3))
+        assertEquals(3, BestSolution().divide(10, 3))
     }
 }

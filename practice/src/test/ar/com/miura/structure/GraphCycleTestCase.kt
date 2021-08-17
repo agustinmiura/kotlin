@@ -18,7 +18,7 @@ class GraphCycleTestCase {
     fun `should find cycle in graph`() {
 
         var size = 6
-        var edges: MutableList<MutableList<Int>> = MutableList<MutableList<Int>>(6, { mutableListOf<Int>()})
+        var edges: MutableList<MutableList<Int>> = MutableList<MutableList<Int>>(6, { mutableListOf<Int>() })
 
         edges.get(0).add(1)
         edges.get(0).add(3)

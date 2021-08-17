@@ -11,30 +11,34 @@ class ReverseString {
 
     fun reverse(x: Int): Int {
 
-        var isNegative = (x<0)
+        var isNegative = (x < 0)
         var absValue = Math.abs(x)
 
         var digitList = mutableListOf<Int>()
         var number = absValue
         var digit = -1
 
-        while(number>=10) {
-            digit = number%10
+        while (number >= 10) {
+            digit = number % 10
             number /= 10
             digitList.add(digit)
         }
         digitList.add(number)
 
-        var reversedNumber:Double = 0.0
+        var reversedNumber: Double = 0.0
         var pow = digitList.size
         pow--
-        for(eachDigit in digitList) {
-            reversedNumber += (eachDigit * Math.pow(10.0, pow*1.0))
+        for (eachDigit in digitList) {
+            reversedNumber += (eachDigit * Math.pow(10.0, pow * 1.0))
             pow--
         }
 
-        reversedNumber = if (isNegative) { reversedNumber * -1 } else { reversedNumber }
-        reversedNumber = if ( (reversedNumber>MAX_VALUE) || (reversedNumber<MIN_VALUE) ) {
+        reversedNumber = if (isNegative) {
+            reversedNumber * -1
+        } else {
+            reversedNumber
+        }
+        reversedNumber = if ((reversedNumber > MAX_VALUE) || (reversedNumber < MIN_VALUE)) {
             0.0
         } else {
             reversedNumber

@@ -21,16 +21,16 @@ class Sudoku {
 
     }
 
-    private fun validRows(board: Array<CharArray>):Boolean {
+    private fun validRows(board: Array<CharArray>): Boolean {
 
         var max = board.size
-        for((i,charArray) in board.withIndex()) {
+        for ((i, charArray) in board.withIndex()) {
 
-            var charSet= mutableSetOf<Char>()
+            var charSet = mutableSetOf<Char>()
 
-            for((index,value) in charArray.withIndex()) {
+            for ((index, value) in charArray.withIndex()) {
 
-                if (value!='.') {
+                if (value != '.') {
                     if (charSet.contains(value)) {
                         return false
 
@@ -43,20 +43,20 @@ class Sudoku {
         return true
     }
 
-    private fun validCols(board: Array<CharArray>):Boolean {
+    private fun validCols(board: Array<CharArray>): Boolean {
         var max = board.size
 
         var colNumber = 0
-        while(colNumber<max) {
+        while (colNumber < max) {
 
             var charSet = mutableSetOf<Char>()
 
-            for(charArray in board) {
+            for (charArray in board) {
 
-                var value:Char = charArray.get(colNumber)
-                if (value!='.' && charSet.contains(value)) {
+                var value: Char = charArray.get(colNumber)
+                if (value != '.' && charSet.contains(value)) {
                     return false
-                } else if(value!='.') {
+                } else if (value != '.') {
                     charSet.add(value)
                 }
             }
@@ -67,15 +67,15 @@ class Sudoku {
 
     }
 
-    private fun validSquare(board: Array<CharArray>):Boolean {
+    private fun validSquare(board: Array<CharArray>): Boolean {
 
         val startPositions = mutableListOf<IntArray>(
-            intArrayOf(0,0), intArrayOf(0,3),intArrayOf(0,6),
-            intArrayOf(3,0), intArrayOf(3,3),intArrayOf(3,6),
-            intArrayOf(6,0), intArrayOf(6,3),intArrayOf(6,6)
+            intArrayOf(0, 0), intArrayOf(0, 3), intArrayOf(0, 6),
+            intArrayOf(3, 0), intArrayOf(3, 3), intArrayOf(3, 6),
+            intArrayOf(6, 0), intArrayOf(6, 3), intArrayOf(6, 6)
         )
 
-        for(position in startPositions) {
+        for (position in startPositions) {
             val validSquare = validSquare(board, position)
             if (!validSquare) {
                 return false
@@ -84,21 +84,21 @@ class Sudoku {
         return true
     }
 
-    private fun validSquare(board:Array<CharArray>, ints:IntArray):Boolean {
+    private fun validSquare(board: Array<CharArray>, ints: IntArray): Boolean {
         var index = ints[0]
-        var max = index+3
+        var max = index + 3
         val charSet = mutableSetOf<Char>()
-        while(index<max) {
+        while (index < max) {
 
             var charArray = board.get(index)
-            var j=ints[1]
-            var maxJ = j+3
-            while(j<maxJ) {
+            var j = ints[1]
+            var maxJ = j + 3
+            while (j < maxJ) {
 
                 var value = charArray.get(j)
-                if (value!='.' && charSet.contains(value)) {
+                if (value != '.' && charSet.contains(value)) {
                     return false
-                } else if(value!='.') {
+                } else if (value != '.') {
                     charSet.add(value)
                 }
 

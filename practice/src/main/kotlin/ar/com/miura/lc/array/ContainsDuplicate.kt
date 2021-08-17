@@ -6,9 +6,9 @@ package ar.com.miura.lc.array
 class ContainsDuplicate {
     fun containsDuplicate(nums: IntArray): Boolean {
 
-        val intSet:MutableSet<Int> = mutableSetOf()
+        val intSet: MutableSet<Int> = mutableSetOf()
 
-        for((index,value) in nums.withIndex()) {
+        for ((index, value) in nums.withIndex()) {
 
             if (!intSet.contains(value)) {
                 intSet.add(value)

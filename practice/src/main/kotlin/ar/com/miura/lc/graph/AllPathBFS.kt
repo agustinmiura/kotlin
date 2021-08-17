@@ -8,16 +8,16 @@ class AllPathBFS {
         var queue: Queue<MutableList<Int>> = LinkedList<MutableList<Int>>()
         queue.offer(mutableListOf<Int>(0))
 
-        while(!queue.isEmpty()) {
+        while (!queue.isEmpty()) {
 
             var path = queue.poll()
-            var lastNode = path.get(path.size-1)
-            if (lastNode==graph.size-1) {
+            var lastNode = path.get(path.size - 1)
+            if (lastNode == graph.size - 1) {
                 paths.add(path)
             } else {
 
                 var nextNodes = graph.get(lastNode)
-                for(node in nextNodes) {
+                for (node in nextNodes) {
                     var newPath = path.toMutableList()
                     newPath.add(node)
                     queue.offer(newPath)

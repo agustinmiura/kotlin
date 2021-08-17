@@ -6,7 +6,7 @@ package ar.com.miura.lc.math
 class ExcellSheetColumnNumber {
     fun titleToNumber(columnTitle: String): Int {
 
-        var letterToDigit:Map<Char,Int> = mapOf(
+        var letterToDigit: Map<Char, Int> = mapOf(
             'A' to 1,
             'B' to 2,
             'C' to 3,
@@ -36,13 +36,13 @@ class ExcellSheetColumnNumber {
         )
 
         var base = 26.0
-        var lastIndex = columnTitle.length-1
+        var lastIndex = columnTitle.length - 1
 
         var number = 0.0
         var pow = 0
-        while(lastIndex>=0) {
+        while (lastIndex >= 0) {
             var character = columnTitle.get(lastIndex)
-            number += Math.pow(base, pow*1.0)*(letterToDigit.getOrDefault(character,0))
+            number += Math.pow(base, pow * 1.0) * (letterToDigit.getOrDefault(character, 0))
             pow++
             lastIndex--
         }

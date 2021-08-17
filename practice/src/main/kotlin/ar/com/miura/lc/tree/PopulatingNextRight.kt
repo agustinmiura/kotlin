@@ -7,7 +7,7 @@ import java.util.*
  */
 class PopulatingNextRight {
     fun connect(root: Node?): Node? {
-        if (root==null) {
+        if (root == null) {
             return null
         } else {
             root.next = null
@@ -18,29 +18,29 @@ class PopulatingNextRight {
 
     private fun subConnect(root: Node) {
 
-        var nodes:Queue<Node> = LinkedList<Node>()
+        var nodes: Queue<Node> = LinkedList<Node>()
 
         nodes.add(root)
 
-        while(!nodes.isEmpty()) {
+        while (!nodes.isEmpty()) {
 
             var sons = mutableListOf<Node>()
-            val iterator:Iterator<Node> = nodes.iterator()
+            val iterator: Iterator<Node> = nodes.iterator()
 
-            var before:Node? = null
-            for(node in iterator) {
+            var before: Node? = null
+            for (node in iterator) {
 
-                val nodeLeft:Node? = node.left
-                if (nodeLeft!=null) {
+                val nodeLeft: Node? = node.left
+                if (nodeLeft != null) {
                     sons.add(nodeLeft)
                 }
 
-                val nodeRight:Node? = node.right
-                if (nodeRight!=null) {
+                val nodeRight: Node? = node.right
+                if (nodeRight != null) {
                     sons.add(nodeRight)
                 }
 
-                if (before!=null) {
+                if (before != null) {
                     before.next = node
                 }
                 before = node
@@ -49,7 +49,7 @@ class PopulatingNextRight {
 
             nodes.clear()
 
-            for(node in sons) {
+            for (node in sons) {
                 nodes.add(node)
             }
         }

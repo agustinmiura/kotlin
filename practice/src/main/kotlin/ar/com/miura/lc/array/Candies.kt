@@ -4,14 +4,14 @@ class Candies {
     fun distributeCandies(candyType: IntArray): Int {
 
         val size = candyType.size
-        val maxQty = size/2
+        val maxQty = size / 2
 
         var qtyToEat = 0
 
-        val intSet:MutableSet<Int> = mutableSetOf()
-        for((index,value) in candyType.withIndex()) {
+        val intSet: MutableSet<Int> = mutableSetOf()
+        for ((index, value) in candyType.withIndex()) {
 
-            if (qtyToEat>=maxQty) {
+            if (qtyToEat >= maxQty) {
                 break
             }
 

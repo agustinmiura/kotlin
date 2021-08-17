@@ -12,20 +12,21 @@ class Parenthesis {
     }
 
     private fun backtrack(
-        strings:MutableList<String>,
+        strings: MutableList<String>,
         currentString: String,
         openQty: Int,
         closeQty: Int,
-        max: Int) {
+        max: Int
+    ) {
 
-        if (currentString.length==max*2) {
+        if (currentString.length == max * 2) {
             strings.add(currentString)
             return
 
         }
 
         if (openQty < max) {
-            backtrack(strings, currentString + "(", openQty + 1, closeQty , max)
+            backtrack(strings, currentString + "(", openQty + 1, closeQty, max)
         }
 
         if (closeQty < openQty) {

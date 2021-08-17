@@ -12,33 +12,33 @@ class HappyNumber3 {
         var slow = number
         var fast = getCalc(getCalc(number))
 
-        while(fast!=1 && fast!=slow) {
+        while (fast != 1 && fast != slow) {
             slow = getCalc(slow)
             fast = getCalc(getCalc(fast))
         }
 
-        return fast==1
+        return fast == 1
 
     }
 
-    fun getCalc(n:Int):Int {
-        var digits:MutableList<Int> = extractDigits(n)
+    fun getCalc(n: Int): Int {
+        var digits: MutableList<Int> = extractDigits(n)
         return calcSum(digits)
     }
 
-    fun calcSum(nums:MutableList<Int>):Int {
-        return nums.map{it*it}.reduce{y, vars -> y+vars}
+    fun calcSum(nums: MutableList<Int>): Int {
+        return nums.map { it * it }.reduce { y, vars -> y + vars }
     }
 
-    fun extractDigits(n:Int):MutableList<Int> {
+    fun extractDigits(n: Int): MutableList<Int> {
 
         var digits = mutableListOf<Int>()
 
         var div = n
         var remainder = n
-        while(div>=10) {
+        while (div >= 10) {
             remainder = div % 10
-            div = div/10
+            div = div / 10
             digits.add(remainder)
         }
         digits.add(div)

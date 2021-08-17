@@ -6,24 +6,24 @@ package ar.com.miura.lc.tree
 class KSmallestElement {
     fun kthSmallest(root: TreeNode?, k: Int): Int {
         var numbers = mutableListOf<Int>()
-        inorder(root,numbers)
-        return numbers.get(k-1)
+        inorder(root, numbers)
+        return numbers.get(k - 1)
     }
 
-    private fun inorder(node: TreeNode?, numbers:MutableList<Int>) {
+    private fun inorder(node: TreeNode?, numbers: MutableList<Int>) {
 
-        if (node==null) {
+        if (node == null) {
             return
         }
 
-        if (node.left!=null) {
-            inorder(node.left,numbers)
+        if (node.left != null) {
+            inorder(node.left, numbers)
         }
 
         numbers.add(node.`val`)
 
-        if (node.right!=null) {
-            inorder(node.right,numbers)
+        if (node.right != null) {
+            inorder(node.right, numbers)
         }
 
     }

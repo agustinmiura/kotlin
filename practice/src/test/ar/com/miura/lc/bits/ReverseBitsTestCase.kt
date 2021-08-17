@@ -11,7 +11,7 @@ class ReverseBitsTestCase {
         /**
          *
          */
-        var number:Int = Integer.parseInt("00000010100101000001111010011100", 2)
+        var number: Int = Integer.parseInt("00000010100101000001111010011100", 2)
         var reversed = ReverseBit().reverse(number.toInt())
         assertEquals("111001011110000010100101000000", Integer.toBinaryString(reversed.toInt()))
     }
