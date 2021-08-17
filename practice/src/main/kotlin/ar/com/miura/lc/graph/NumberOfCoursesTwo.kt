@@ -11,6 +11,10 @@ class NumberOfCoursesTwo {
         var graph = mutableMapOf<Int, MutableList<Int>>();
         var inGrades = mutableMapOf<Int,Int>();
 
+        for(i in 0..(numCourses-1)) {
+            inGrades.put(i,0);
+        }
+
         /*
         build graph and grade
         */
