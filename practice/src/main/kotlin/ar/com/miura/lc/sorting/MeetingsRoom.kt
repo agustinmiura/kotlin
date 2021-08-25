@@ -13,13 +13,12 @@ class MeetingsRoom {
         for(i in 0..(size-1)) {
             meetings.add(intervals[i]);
         }
-        /*
-        val pq = PriorityQueue<Int>(nums.size, { e1: Int, e2: Int -> e1 - e2 })
-        */
-        meetings.sortWith { x: IntArray, y: IntArray -> x[0] - y[0] };
 
-        var comparator = Comparator<Int>{i1,i2 -> i1-i2};
-        var pq:PriorityQueue<Int> = PriorityQueue<Int>(comparator);
+        var comparator = Comparator<IntArray>{i1,i2 -> i1[0] - i2[0]};
+        meetings.sortWith(comparator);
+
+        var intComparator = Comparator<Int>{i1,i2 -> i1-i2};
+        var pq:PriorityQueue<Int> = PriorityQueue<Int>(intComparator);
 
         var meeting = meetings.get(0);
         meetings.removeAt(0);
