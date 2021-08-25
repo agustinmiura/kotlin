@@ -8,16 +8,16 @@ class Permutations {
         return permutations;
     }
 
-    private fun permutationsHelper(index:Int, array:MutableList<Int>, permutations: MutableList<List<Int>>) {
-        if (index==array.size-1) {
-            permutations.add(array)
+    private fun permutationsHelper(i:Int, array:MutableList<Int>, permutations: MutableList<List<Int>>) {
+        if (i==array.size-1) {
+            permutations.add(array.toMutableList())
 
         } else {
             var size = array.size;
-            for(j in 0..(size-1)) {
-                swap(array, index, j);
-                permutationsHelper(index+1, array, permutations);
-                swap(array,j,index);
+            for(j in i..(size-1)) {
+                swap(array, i, j);
+                permutationsHelper(i+1, array, permutations);
+                swap(array,j,i);
             }
         }
     }
