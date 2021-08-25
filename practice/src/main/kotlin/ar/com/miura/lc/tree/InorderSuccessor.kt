@@ -11,7 +11,7 @@ class InorderSuccessor {
         if (p!!.right!=null) {
             var left = p.right;
             if (left!=null) {
-                while(left.left != null) {
+                while(left!!.left != null) {
                     left = left.left;
                 }
             }
