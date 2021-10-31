@@ -1,6 +1,6 @@
-package ar.com.miura.pramp
+package ar.com.miura.pramp;
 
-class ZerosToOne {
+public class ZerosToOne {
     /**
      *
      * @param arr
