@@ -1,7 +1,5 @@
 package ar.com.miura.lc.tree
 
-import java.util.*;
-
 class InorderSuccessor {
     fun inorderSuccessor(root: TreeNode?, p: TreeNode?): TreeNode? {
 
