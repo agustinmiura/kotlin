@@ -6,6 +6,8 @@ package ar.com.miura.lc.array
 class SetMatrixZeroes {
     fun setZeroes(matrix: Array<IntArray>): Unit {
 
+        var a = intArrayOf()
+
         /*
           j------
         i ----
