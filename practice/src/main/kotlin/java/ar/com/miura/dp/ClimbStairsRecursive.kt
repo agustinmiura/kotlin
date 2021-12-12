@@ -1,4 +1,4 @@
-package ar.com.miura.lc.dp
+package java.ar.com.miura.dp
 
 class ClimbStairsRecursive {
     fun climbStairs(n: Int): Int {
