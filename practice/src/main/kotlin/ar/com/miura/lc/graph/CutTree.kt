@@ -6,6 +6,7 @@ import java.util.Queue
 
 /**
  * https://leetcode.com/problems/cut-off-trees-for-golf-event/
+ * 675. Cut Off Trees for Golf Event
  */
 class CutTree {
     fun cutOffTree(forest: List<List<Int>>): Int {
@@ -17,17 +18,23 @@ class CutTree {
         val n = forest[0].size;
         for(i in 0..(m-1)) {
             for(j in 0..(n-1)) {
-                val list = listOf<Int>(i,j,forest.get(i).get(j));
-                pq.add(list)
+                var cost = forest.get(i).get(j);
+                val list = listOf<Int>(i,j,cost);
+                if (cost>1) {
+                    val list = listOf<Int>(i,j,cost);
+                    pq.add(list)
+                }
             }
         }
 
-        val start = intArrayOf(-1,-1);
+        val start = intArrayOf(0,0);
         var sum = 0;
         while(!pq.isEmpty()) {
             var tree:List<Int> = pq.poll();
+
             var step = minStep(start, tree, forest);
-            if (step<=-1) {
+
+            if (step<0) {
                 return -1;
             }
             sum += step;
@@ -46,7 +53,12 @@ class CutTree {
 
         var step = 0;
 
-        var queue: Queue<IntArray> = LinkedList<IntArray>();
+        var visited = Array(n){BooleanArray(m){false}}
+
+        var queue:Queue<IntArray> = LinkedList<IntArray>();
+        queue.add(start);
+
+        visited[start[0]][start[1]] = true;
 
         while(!queue.isEmpty()) {
             var size = queue.size;
@@ -55,7 +67,7 @@ class CutTree {
                 if (current[0]==destination.get(0) && current[1]==destination.get(1)) {
                     return step;
                 }
-                var adjacents = getAdjacents(current, forest);
+                var adjacents = getAdjacents(current, forest, visited);
                 for(adjacent in adjacents) {
                     queue.add(adjacent);
                 }
@@ -66,7 +78,7 @@ class CutTree {
         return -1;
     }
 
-    private fun getAdjacents(current:IntArray, forest: List<List<Int>>):List<IntArray> {
+    private fun getAdjacents(current:IntArray, forest: List<List<Int>>, visited:Array<BooleanArray>):List<IntArray> {
 
         var n = forest.size;
         var m = forest[0].size;
@@ -74,39 +86,39 @@ class CutTree {
         var i = current[0];
         var j = current[1];
 
-        var visited = Array(n){BooleanArray(m){false}}
-        visited[i][j] = true;
-
         var movements = mutableListOf<IntArray>();
-
-        /*
-        right
-        */
-        if ( (j+1)<m && (!visited[i][j+1]) && forest.get(i).get(j)!=0 ) {
-            movements.add(intArrayOf(i,j+1));
-        }
-
-        /*
-        down
-        */
-        if ( (i+1<n) && (!visited[i+1][j]) && forest.get(i+1).get(j)!=0 ) {
-            movements.add(intArrayOf(i+1,j));
-        }
-
-        /*
-        left
-        */
-        if ( (j-1>=0) && (!visited[i][j-1]) && forest.get(i).get(j-1)!=0 ) {
-            movements.add(intArrayOf(i,j-1));
-        }
 
         /*
         top
         */
         if ( (i-1>=0) && (!visited[i-1][j]) && (forest.get(i-1).get(j)!=0))  {
             movements.add(intArrayOf(i-1,j));
+            visited[i-1][j] = true;
         }
 
+        /*
+        down
+        */
+        if ( (i<=n-2) && (!visited[i+1][j]) && forest.get(i+1).get(j)!=0 ) {
+            movements.add(intArrayOf(i+1,j));
+            visited[i+1][j] = true;
+        }
+
+        /*
+        left
+        */
+        if ( (j>=1) && (!visited[i][j-1]) && forest.get(i).get(j-1)!=0 ) {
+            movements.add(intArrayOf(i,j-1));
+            visited[i][j-1] = true;
+        }
+
+        /*
+        right
+        */
+        if ( (j+2)<=m && (!visited[i][j+1]) && forest.get(i).get(j+1)!=0 ) {
+            movements.add(intArrayOf(i,j+1));
+            visited[i][j+1] = true;
+        }
 
         return movements.toList();
     }
