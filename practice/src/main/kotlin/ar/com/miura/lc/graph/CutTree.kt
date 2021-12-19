@@ -7,6 +7,8 @@ import java.util.Queue
 /**
  * https://leetcode.com/problems/cut-off-trees-for-golf-event/
  * 675. Cut Off Trees for Golf Event
+ * The worst case time complexity could be O(m^2 * n^2) (m = number of rows, n = number of columns)
+ * since there are m * n trees and for each BFS worst case time complexity is O(m * n) too.
  */
 class CutTree {
     fun cutOffTree(forest: List<List<Int>>): Int {
