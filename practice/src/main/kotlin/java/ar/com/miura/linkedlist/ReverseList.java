@@ -26,9 +26,7 @@ public class ReverseList {
             //nextTemp = [3,4,5]
             ListNode nextTemp = current.next;
             //current = [2] , current = [2,1]
-            current.next = null;
             current.next = previous;
-
             //previous = [2,1]
             previous = current;
             //current = [3,4,5]
