@@ -10,6 +10,12 @@ class RotateArray {
             return -1
         }
 
+        /*
+        * Find the pivot of the array to know where to search
+        *
+        * 4, 5, 6, 7, 0, 1, 2 => return 0
+        * 7, 0, 1, 2, 3, 5, 6 => rturns 0
+        * */
         var left = 0
         var right = nums.size - 1
         while (left < right) {
