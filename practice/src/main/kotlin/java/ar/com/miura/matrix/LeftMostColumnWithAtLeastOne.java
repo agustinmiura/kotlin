@@ -1,7 +1,7 @@
 package java.ar.com.miura.matrix;
 
 public class LeftMostColumnWithAtLeastOne {
-    
+
     private static final int MAX_COL = 1001;
 
     public int leftMostColumnWithOne(BinaryMatrix binaryMatrix) {
