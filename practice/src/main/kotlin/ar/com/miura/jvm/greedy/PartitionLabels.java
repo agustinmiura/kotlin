@@ -1,15 +1,15 @@
 package ar.com.miura.jvm.greedy;
 
 public class PartitionLabels {
-    public List<Integer> partitionLabels(String s) {
+    public java.util.List<Integer> partitionLabels(String s) {
 
-        Map<Character,Integer> map = new HashMap<Character,Integer>();
+        java.util.Map<Character, Integer> map = new java.util.HashMap<Character, Integer>();
         for(int i=0;i<s.length();i++) {
             Character tempChar = s.charAt(i);
             map.put(tempChar, i);
         }
 
-        List<Integer> intervals = new ArrayList<Integer>();
+        java.util.List<Integer> intervals = new java.util.ArrayList<Integer>();
         int start = 0;
         int j = 0;
         for(int i=0;i<s.length();i++) {
