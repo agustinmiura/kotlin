@@ -2,21 +2,23 @@ package ar.com.miura.jvm.backtracing;
 
 public class WordSearch {
 
-    int rowQty = board.length;
-    int colQty = board[0].length;
+    public boolean exist(char[][] board, String word) {
 
-    boolean[][] visited = new boolean[rowQty][colQty];
+        int rowQty = board.length;
+        int colQty = board[0].length;
+
+        boolean[][] visited = new boolean[rowQty][colQty];
 
         for(int i=0;i<rowQty;i++) {
-        for(int j=0;j<colQty;j++) {
-            if (word.charAt(0)==board[i][j] && search(board, i, j, 0, visited, word)) {
-                return true;
+            for(int j=0;j<colQty;j++) {
+                if (word.charAt(0)==board[i][j] && search(board, i, j, 0, visited, word)) {
+                    return true;
+                }
             }
         }
-    }
 
         return false;
-}
+    }
 
     /**
 
