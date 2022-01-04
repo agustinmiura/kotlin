@@ -4,7 +4,7 @@ public class TwoSumLessK {
     public int twoSumLessThanK(int[] nums, int k) {
 
         int[] cloned = nums.clone();
-        Arrays.sort(cloned);
+        java.util.Arrays.sort(cloned);
         int left = 0;
         int right = cloned.length-1;
 
