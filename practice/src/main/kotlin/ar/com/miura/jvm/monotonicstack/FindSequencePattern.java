@@ -7,7 +7,7 @@ public class FindSequencePattern {
             return false;
         }
 
-        Stack<Integer> stack = new Stack<Integer>();
+        java.util.Stack<Integer> stack = new java.util.Stack<Integer>();
 
         int[] min = new int[nums.length];
 
