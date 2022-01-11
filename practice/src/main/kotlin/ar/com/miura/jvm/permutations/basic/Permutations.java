@@ -1,13 +1,13 @@
 package ar.com.miura.jvm.permutations.basic;
 
 public class Permutations {
-    public List<java.util.List<Integer>> permute(int[] nums) {
-        List<java.util.List<Integer>> permutations = new ArrayList<java.util.List<Integer>>();
+    public java.util.List<java.util.List<Integer>> permute(int[] nums) {
+        java.util.List<java.util.List<Integer>> permutations = new java.util.ArrayList<java.util.List<Integer>>();
         permutations(nums, 0, permutations);
         return permutations;
     }
 
-    private void permutations(int[] nums, int i, List<java.util.List<Integer>> permutations) {
+    private void permutations(int[] nums, int i, java.util.List<java.util.List<Integer>> permutations) {
 
         int size = nums.length;
         if (i==size-1) {
