@@ -1,5 +1,34 @@
 package ar.com.miura.pramp;
 
+/**
+ * Problem explained :
+
+ Decrypted message:	c	r	i	m	e
+ Step 1:	99	114	105	109	101
+ Step 2:	100	214	319	428	529
+ Step 3:	100	110	111	116	113
+ Encrypted message:	d	n	o	t	q
+
+ Step 1 : 99 to 0
+
+ Then keep adding
+    114 => 214
+    105 => 319
+    109 => 428
+    101 => 529
+
+ Then for each of the numbers reduce 26 until it is greater than 97 .
+
+ e(n)  = dec(n) + secondStep(n-1) - 26m
+ Then convert into a valid ascii .
+
+ d(n) = e(n) - secondTep(n-1) + 26m
+
+ And the part of  + 26m is optimized .
+ *
+ *
+ *
+ */
 public class DecryptMessage {
 
     private static final char LOWER = 97;
