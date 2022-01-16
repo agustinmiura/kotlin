@@ -27,8 +27,9 @@ class FreqStack {
             TopElement element = stack.pop();
             if (element.frequency.equals(maxQty) && topElement == null) {
                 topElement = element;
-                for(TopElement tempElement:list) {
-                    stack.push(tempElement);
+                int size = list.size();
+                for(int i=size-1;i>=0;i--) {
+                    stack.push(list.get(i));
                 }
                 break;
             } else {
