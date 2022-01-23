@@ -42,10 +42,17 @@ public class Maze2 {
                     min++;
                 }
 
+                /**
+                 * From "position + min" I have reached [i][j] check the distances
+                 */
                 int newDistance = distances[position[0]][position[1]] + min;
                 int oldDistance = distances[i-movement[0]][j-movement[1]];
 
                 if (newDistance<oldDistance) {
+                    /**
+                     * Fix the new distances that are out of range after the while
+                     *
+                     */
                     distances[i-movement[0]][j-movement[1]] = newDistance;
                     queue.add(new int[]{i-movement[0], j-movement[1]});
                 }
