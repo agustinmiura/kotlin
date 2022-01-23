@@ -2,8 +2,8 @@ package ar.com.miura.jvm.slidewindow;
 
 public class ContDifference {
     public int longestSubarray(int[] nums, int limit) {
-        Deque<Integer> maxDeque = new LinkedList<>();
-        Deque<Integer> minDeque = new LinkedList<>();
+        java.util.Deque<Integer> maxDeque = new java.util.LinkedList<>();
+        java.util.Deque<Integer> minDeque = new java.util.LinkedList<>();
 
         int res = 1;
 
