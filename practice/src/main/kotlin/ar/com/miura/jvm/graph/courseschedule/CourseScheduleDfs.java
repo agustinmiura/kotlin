@@ -1,4 +1,4 @@
-package ar.com.miura.jvm.graph;
+package ar.com.miura.jvm.graph.courseschedule;
 
 public class CourseScheduleDfs {
     public boolean canFinish(int numCourses, int[][] prerequisites) {
