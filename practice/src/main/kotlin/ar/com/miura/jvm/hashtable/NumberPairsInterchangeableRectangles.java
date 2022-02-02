@@ -13,3 +13,6 @@ public class NumberPairsInterchangeableRectangles {
         return count;
     }
 }
+
+
+
