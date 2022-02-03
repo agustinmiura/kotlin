@@ -29,7 +29,7 @@ public class ShortesPathBinaryMatrix {
         int rowQty = visited.length;
         int colQty = visited[0].length;
 
-        Queue<int[]> queue = new LinkedList<int[]>();
+        java.util.Queue<int[]> queue = new java.util.LinkedList<int[]>();
         queue.offer(new int[]{0,0});
 
         visited[0][0] = true;
