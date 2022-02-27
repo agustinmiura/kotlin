@@ -1,5 +1,7 @@
 package ar.com.miura.fp
 
+import ar.com.miura.fp.Example.findFirst
+
 object Example {
 
     fun abs(n:Int): Int =
@@ -48,4 +50,6 @@ fun main() {
     println(Example.formatResult("absolute value", -42, ::abs))
     println(Example.formatResult("absolute", -42, { n -> if (n < 0) -n else n }))
     */
+    val index = findFirst(arrayOf(7, 9, 13), { i: Int -> i == 9 })
+    println(" The index is : ${index} ")
 }
