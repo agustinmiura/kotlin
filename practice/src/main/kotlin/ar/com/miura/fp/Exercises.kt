@@ -7,29 +7,28 @@ object Exercises {
   val <T> List<T>.head: T
     get() = first()
 
-  /*
-  fun <A> isSorted(aa: List<A>, order: (A, A) -> Boolean): Boolean  {
-      return false;
-  }
-  */
-
-  fun isSorted(aa: List<String>):Boolean {
-    fun go(first: String, list: List<String>): Boolean {
-      if (!list.isEmpty()) {
-        if (first.compareTo(list.head) <= 0) {
-          return go(list.head, list.tail)
-        } else {
-          return false
-        }
-      } else {
-        return true
-      }
+  fun <A> isSorted(aa: List<A>, order: (A, A) -> Boolean): Boolean {
+    tailrec fun go(list: List<A>, orderFn: (A, A) -> Boolean): Boolean {
+      return if (list.isEmpty() || list.size == 1)
+        true
+      else if (orderFn(list.head, list.tail.head))
+        return go(list.tail, orderFn)
+      else
+        return false
     }
-    return go(aa.head, aa.tail)
+    return go(aa, order)
   }
 }
 
 fun main() {
-  val strings = listOf("1", "2","3")
-  println(Exercises.isSorted(strings))
+  try {
+    val strings = listOf("1", "2", "3")
+    val order =
+      fun(string1: String, string2: String): Boolean {
+        return string1.compareTo(string2) <= 0
+      }
+    println(" Is sorted : " + Exercises.isSorted(strings, order))
+  }catch(e:Exception) {
+    e.printStackTrace()
+  }
 }
