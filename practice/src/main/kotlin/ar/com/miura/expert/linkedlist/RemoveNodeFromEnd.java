@@ -35,7 +35,7 @@ public class RemoveNodeFromEnd {
     }
 
     static class LinkedList {
-        
+
         int value;
         LinkedList next = null;
 
