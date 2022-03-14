@@ -1,10 +1,10 @@
 package ar.com.miura.jvm.array;
 
 public class MinimumAbsoluteDifference {
-    public List<List<Integer>> minimumAbsDifference(int[] arr) {
+    public java.util.List<java.util.List<Integer>> minimumAbsDifference(int[] arr) {
 
         int[] cloned = arr.clone();
-        Arrays.sort(cloned);
+        java.util.Arrays.sort(cloned);
 
         int size = arr.length;
         int minDiff = Integer.MAX_VALUE;
@@ -12,10 +12,10 @@ public class MinimumAbsoluteDifference {
             minDiff = Math.min(minDiff, Math.abs(cloned[i]-cloned[i-1]));
         }
 
-        List<List<Integer>> pairs = new ArrayList();
+        java.util.List<java.util.List<Integer>> pairs = new java.util.ArrayList();
         for(int i=1;i<size;i++) {
             if (Math.abs(cloned[i]-cloned[i-1])==minDiff) {
-                List<Integer> list = new ArrayList();
+                java.util.List<Integer> list = new java.util.ArrayList();
                 list.add(cloned[i-1]);
                 list.add(cloned[i]);
                 pairs.add(list);
