@@ -1,10 +1,12 @@
 package ar.com.miura.jvm.math;
 
+import java.util.Random;
+
 public class RandomPickWithWeight {
     private int total = 0;
     private int[] prefixSum;
 
-    public Solution(int[] w) {
+    public void Solution(int[] w) {
 
         this.prefixSum = new int[w.length];
 
